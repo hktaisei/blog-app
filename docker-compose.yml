@@ -1,0 +1,47 @@
+version: '3'
+
+services:
+ db:
+    container_name: blog-db
+    hostname: blog-db
+    build:
+      context: .
+      dockerfile: Docker/mysql/Dockerfile
+    volumes:
+      - ./Docker/mysql/data:/var/lib/mysql
+      - ./Docker/mysql/init:/docker-entrypoint-initdb.d
+      - ./Docker/mysql/my.cnf:/etc/mysql/conf.d/my.cnf
+    ports:
+      - 3306:3306
+    environment: 
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_USER: ${MYSQL_USER}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+      TZ: ${TZ}
+ app:
+    container_name: blog-app
+    hostname: blog-app
+    build:
+      context: .
+      dockerfile: Docker/spring/Dockerfile
+    ports:
+      - "8080:8080"
+    tty: true
+    volumes:
+      - ./blog:/app
+    depends_on:
+      db:
+        condition: service_started
+ frontend:
+    container_name: frontend
+    build:
+      context: .
+      dockerfile: Docker/vue/Dockerfile
+    ports:
+      - 9090:8080
+    volumes:
+      - ./blog-app-frontend:/usr/src/app:cached
+    stdin_open: true
+    tty: true
+ 
