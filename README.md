@@ -28,7 +28,7 @@ docker exec frontend npm run serve
 ```
 
 ## 起動確認
-spring(api)
+spring(api)　
 DB内のデータが返ってきます。
 http://localhost:8080/testAPI
 
