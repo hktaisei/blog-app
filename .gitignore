@@ -1,5 +1,6 @@
 /Docker/mysql/data
 .env
+.env.example
 
 # blog-app-fronted
 
