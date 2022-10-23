@@ -12,8 +12,9 @@ git config --global core.autocrlf input
 
 ## 起動までの手順
 1. 「.env.example」のファイル名 を 「.env」に変更してください。  
-2. docker-compose.ymlが存在するディレクトリで以下のコマンドを実行すると起動します。
-※ビルド時にダウンロードが止まることがあれば、もう一度やり直してください。
+2. docker-compose.ymlが存在するディレクトリで以下のコマンドを実行すると起動します。  
+※ビルド時にダウンロードが止まることがあれば、もう一度やり直してください。  
+※docker-composeコマンドを実行できるようにしておいてください。  
 ```
 docker-compose up -d
 ```
