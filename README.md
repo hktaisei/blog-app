@@ -35,5 +35,6 @@ DB内のデータが返ってきます。
 http://localhost:8080/testAPI
 
 vue
+
 http://localhost:9090/
 
