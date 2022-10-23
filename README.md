@@ -1,4 +1,5 @@
-.env.example : 「.env」にファイル名を変更してください。
-実行コマンド
-1. docker-compose.ymlが存在するディレクトリ以下のコマンドを実行すると起動する。
-@ docker-compose up @
+1. 「.env.example」のファイル名 を 「.env」に変更してください。  
+2. docker-compose.ymlが存在するディレクトリで以下のコマンドを実行すると起動します。
+```
+docker-compose up 
+```
