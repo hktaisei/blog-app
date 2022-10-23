@@ -18,6 +18,7 @@ git config --global core.autocrlf input
 docker-compose up -d
 ```
 3. npm
+※時間がかかります。
 ```
 docker exec frontend npm install
 ```
@@ -25,3 +26,12 @@ docker exec frontend npm install
 ```
 docker exec frontend npm run serve
 ```
+
+## 起動確認
+spring(api)
+DB内のデータが返ってきます。
+http://localhost:8080/testAPI
+
+vue
+http://localhost:9090/
+
