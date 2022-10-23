@@ -23,6 +23,7 @@ docker-compose up -d
 docker exec frontend npm install
 ```
 ※npm installが終了しない場合は、以下のコマンドでコンテナ内に入り、npm installを実行します。
+※回線速度の関係で、npm installが終了しない可能性があります。
 ```
 docker exec -it frontend bash
 npm install
