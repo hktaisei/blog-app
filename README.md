@@ -19,10 +19,15 @@ git config --global core.autocrlf input
 docker-compose up -d
 ```
 3. npm
-※時間がかかります。
 ```
 docker exec frontend npm install
 ```
+※npm installが終了しない場合は、以下のコマンドでコンテナ内に入り、npm installを実行する。
+```
+docker exec -it frontend bash
+npm install
+```
+
 4. vueのビルドと起動
 ```
 docker exec frontend npm run serve
